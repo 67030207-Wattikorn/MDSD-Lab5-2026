@@ -242,9 +242,15 @@ class MyApp extends StatelessWidget {
 
 **คำถาม**: ถ้าต้องเพิ่มหน้าจอ `FavoritesPage` ที่ต้องแสดงรายการที่บันทึกไว้ชุดเดียวกัน แต่ถูก push แยกออกไปเป็นอีก Route หนึ่ง จะเกิดปัญหาอะไรกับโค้ดแบบ Prop Drilling นี้ จงเขียนคำตอบสั้น ๆ 
 
-```text
-ปัญหาคือการส่งต่อ State และฟังก์ชันจะทำได้ยากและซับซ้อนมาก 
-```
+item_card
+<img width="1470" height="956" alt="ภาพถ่ายหน้าจอ 2569-08-14 เวลา 14 42 25" src="https://github.com/user-attachments/assets/665f727e-57c6-4af1-a476-aa2205f47a56" />
+
+item_list_section
+<img width="1470" height="955" alt="ภาพถ่ายหน้าจอ 2569-08-14 เวลา 14 42 33" src="https://github.com/user-attachments/assets/843141f2-26f5-457f-b8aa-d707413ef6bb" />
+
+screenshot
+<img width="1470" height="956" alt="ภาพถ่ายหน้าจอ 2569-08-14 เวลา 14 42 52" src="https://github.com/user-attachments/assets/4a63dfab-fccc-4fd5-a61a-24dcee914948" />
+
 
 ---
 
@@ -500,9 +506,13 @@ class HomePage extends StatelessWidget {
 
 > ✅ **Checkpoint 2.2** ทดสอบว่าเมื่อบันทึกสินค้าจากหน้า Home แล้วกดไปหน้า Favorites ตัวเลขและรายการสินค้าตรงกันทันที ลองกดปุ่มถังขยะลบสินค้าออกจากหน้า Favorites แล้วย้อนกลับไปหน้า Home ดูว่าปุ่มของสินค้านั้นกลับมากดซ้ำได้อีกครั้ง ถ่ายภาพหน้าจอทั้งสองหน้าเทียบกันแนบส่ง
 
-```image
+screenshot 1
+<img width="1470" height="956" alt="ภาพถ่ายหน้าจอ 2569-08-14 เวลา 13 56 51" src="https://github.com/user-attachments/assets/52373ecd-fc9d-4dc4-91b2-6a1b5366c680" />
 
-```
+screenshot 2
+<img width="1470" height="956" alt="ภาพถ่ายหน้าจอ 2569-08-14 เวลา 13 57 00" src="https://github.com/user-attachments/assets/e14331c6-34fc-47c7-ac17-8f9edc47ea4b" />
+
+
 
 ---
 
