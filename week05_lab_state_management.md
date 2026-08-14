@@ -525,6 +525,39 @@ class HomePage extends StatelessWidget {
 บันทึกคำตอบที่ได้จาก Gemini 
 
 ```text
+1. Dark Mode / Light Mode (ส่งผลต่อทุกหน้าจอ)
+เครื่องมือที่แนะนำ: Riverpod หรือ Provider (Global State)
+
+เหตุผล:
+
+เป็น App-wide State ที่อยู่ระดับบนสุดของ Widget Tree (ส่งผลต่อ MaterialApp.themeMode) และต้องสามารถเปลี่ยนได้จากหลายหน้าจอ (เช่น หน้า Settings หรือ Profile)
+
+setState ไม่สามารถส่งผ่านค่าข้าม Route หรือข้าม Tree ขนาดใหญ่ได้โดยตรง
+
+การใช้ Riverpod (NotifierProvider<ThemeMode>) หรือ Provider (ChangeNotifierProvider) ช่วยจัดการและ Rebuild เฉพาะส่วนที่จำเป็นได้อย่างมีประสิทธิภาพและเป็นระเบียบ
+
+2. ตัวนับจำนวนคนถูกใจ (ซิงค์ระหว่างหน้ารายการและหน้ารายละเอียด)
+เครื่องมือที่แนะนำ: Riverpod หรือ Provider (Shared / Business Logic State)
+
+เหตุผล:
+
+เป็น Cross-Screen State ที่ต้องซิงค์ข้อมูลชิ้นเดียวกันระหว่าง 2 หน้าจอ เมื่อผู้ใช้กดถูกใจในหน้ารายละเอียด ตัวเลขในหน้ารายการสินค้าต้องอัปเดตตามทันที
+
+หากใช้ setState จะเกิดปัญหา Prop Drilling หรือต้องคอยส่งผลลัพธ์ผ่าน Navigator.pop(result) กลับไปมา ซึ่งจัดการยากเมื่อมีข้อมูลหลายชิ้น
+
+การใช้ Riverpod/Provider เป็นตัวกลางเก็บ State (เช่น ItemNotifier หรือ ProductModel) จะแจ้งเตือน (notify) ทุก Widget ที่กำลังฟังค่านั้นอยู่ให้อัปเดตพร้อมกันทันที
+
+3. Animation ไอคอนหัวใจกระพริบ/ขยายตอนกด (ใช้เฉพาะใน Widget เดียว)
+เครื่องมือที่แนะนำ: setState (Ephemeral / Local UI State)
+
+เหตุผล:
+
+เป็น Local State ล้วน ๆ ที่ไม่มีหน้าจออื่นหรือส่วนอื่นของแอปต้องมารับรู้จังหวะการเล่น Animation
+
+การใช้ StatefulWidget คู่กับ AnimationController และ setState ภายในตัวปุ่มเอง เป็นวิธีที่เรียบง่าย น้ำหนักเบา (Lightweight) และมีประสิทธิภาพสูงสุด
+
+ไม่จำเป็นต้องนำ Global/Scoped State Management อย่าง Provider หรือ Riverpod เข้ามาสร้าง Overhead ให้กับ Logic การแสดงผลเฉพาะจุด
+
 
 ```
 
