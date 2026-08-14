@@ -738,6 +738,10 @@ class HomePage extends ConsumerWidget {
 
 > ✅ **Checkpoint 4.2** เขียนตารางเปรียบเทียบสั้น ๆ ว่าตอนแปลงจาก Provider เป็น Riverpod ต้องเปลี่ยนอะไรบ้าง (เช่น `ChangeNotifier` → `StateNotifier`, `StatelessWidget` → `ConsumerWidget`, `context.watch` → `ref.watch`) อย่างน้อย 4 คู่เทียบ
 
+screenshort
+<img width="1470" height="956" alt="ภาพถ่ายหน้าจอ 2569-08-14 เวลา 15 13 03" src="https://github.com/user-attachments/assets/ceefc98f-7028-4b41-86a7-f8bcfdb2605c" />
+
+
 ---
 
 ## ส่วนที่ 5 (ทำด้วยตนเอง): ออกแบบฟีเจอร์เพิ่มด้วยตัวเอง
